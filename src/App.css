@@ -197,14 +197,32 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
 }
+
 .btn-del-company:hover {
   background: linear-gradient(45deg, #882121, #a72828);
   transform: translateY(-3px);
 }
+
+.social-network-field {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-del-socials {
+  padding: 5px 10px;
+  border: none;
+  background: linear-gradient(45deg, #a72828, #882121);
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
 #resume-text {
   display: flex;
   justify-content: center;
 }
+
 .image-upload-div {
   display: flex;
   flex-direction: row;
@@ -285,9 +303,13 @@ textarea {
   gap: 10px;
 }
 
-.exp-dates-contrainer {
+.exp-dates-contrainer  {
   display: flex;
   gap: 10px;
+}
+
+.dateTil-container {
+  display: flex;
 }
 
 .toggle-buttons-container {
@@ -298,7 +320,8 @@ textarea {
   display: flex;
 }
 
-.wishSalary-btn {
+.wishSalary-btn,
+.dateTil-btn {
   border-radius: 5px;
   cursor: pointer;
   margin-left: 10px;
@@ -306,28 +329,29 @@ textarea {
   border: 2px solid #007bff;
 }
 
-.wishSalary-btn:hover {
+.wishSalary-btn:hover,
+.dateTil-btn:hover {
   background-color: #0056b3 !important;
   color: #fff !important;
   border-color: #0056b3 !important;
 }
 
-.wishSalary-input-disabled-true {
+.wishSalary-input-disabled-true,
+.dateTil-input-disabled-true {
   background-color: lightgray !important;
   color: gray !important;
 }
 
-
 .rendered-btn {
-border-radius: 5px;
-cursor: pointer;
-margin: 5px;
-padding: 10px 20px;
-margin: 5px 0; 
-font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  padding: 10px 20px;
+  margin: 5px 0;
+  font-weight: bold;
 }
 
-.btn-group{
+.btn-group {
   display: flex;
   gap: 5px;
   margin-left: 10px;

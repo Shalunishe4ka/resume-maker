@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { generatePDF } from './generatePDF';
 import { HeaderSection } from './HeaderSection';
 import { GlobalStateContext } from '../GlobalStateContext';
-import { PdfContent } from './PdfContent';
+// import { PdfContent } from './PdfContent';
 
 
 const MainForm = () => {
@@ -40,9 +40,8 @@ const MainForm = () => {
         experiences={experiences}
         additionalInfo={additionalInfo}
         aboutMe={aboutMe}
-        date={date}
-        errors={errors}
-        imageSrc={imageSrc} /> */}
+        imageSrc={imageSrc}
+      /> */}
       <button className="btn no-print generate-pdf-btn" onClick={handleGeneratePDF}>
         Скачать PDF
       </button>

@@ -14,6 +14,8 @@ export const GlobalStateProvider = ({ children }) => {
     address: "",
     sex: "",
     birthDate: "",
+    citizenship: "",
+    skills: "",
   });
 
   const [mainInfo, setMainInfo] = useState([
@@ -22,16 +24,19 @@ export const GlobalStateProvider = ({ children }) => {
       workGraph: [],
       movements: "",
       family: "",
+      socialNetworks: [],
     },
   ]);
 
+  // Опыт работы – массив объектов
   const [experiences, setExperiences] = useState([
     {
       company: "",
       dateFrom: "",
-      deteTil: "",
+      dateTil: "",
       position: "",
       description: "",
+      scientificActivity: "",
     },
   ]);
 
