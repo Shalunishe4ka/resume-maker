@@ -1,38 +1,334 @@
-.App {
-  text-align: center;
+/* styles.css */
+
+/* Базовые стили и сброс */
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainForm {
   display: flex;
   flex-direction: column;
+  margin-bottom: 120px;
+}
+
+.generate-pdf-btn {
+  max-width: 150px;
+  max-height: 45px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Секция шапки (HeaderSection) */
+.header-section {
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+/* Обёртка для аватара */
+.avatar-wrapper {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Стили для изображения аватара */
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #007bff;
+}
+
+/* Кнопка загрузки изображения */
+.upload-btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  height: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.upload-btn:hover {
+  background: linear-gradient(45deg, #0056b3, #007bff);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Скрытый инпут загрузки */
+.hidden-input {
+  display: none;
+}
+
+/* Иконка плюса внутри кнопки загрузки */
+.plus-icon {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 8px;
+}
+
+.plus-icon::before,
+.plus-icon::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+}
+
+.plus-icon::before {
+  top: 50%;
+  left: 25%;
+  right: 25%;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.plus-icon::after {
+  left: 50%;
+  top: 25%;
+  bottom: 25%;
+  width: 2px;
+  transform: translateX(-50%);
+}
+
+/* Группа полей ввода (InputFields) */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Стили для input, select и textarea */
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  background: #fdfdfd;
+  outline: none;
+  color: #333;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Стили для сообщений об ошибках */
+.error {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Общие стили для кнопок */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #28a745, #218838);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #218838, #28a745);
+  transform: translateY(-3px);
+}
+
+.btn-option {
+  color: #333;
+}
+
+.btn-del-company {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #a72828, #882121);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+.btn-del-company:hover {
+  background: linear-gradient(45deg, #882121, #a72828);
+  transform: translateY(-3px);
+}
+#resume-text {
+  display: flex;
+  justify-content: center;
+}
+.image-upload-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+/* Стилизация для печати */
+.no-print {
+  /* Можно добавить специфичные стили для печати, если необходимо */
+}
+
+@media print {
+  .no-print {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+/* Заголовки внутри формы */
+.input-group h3 {
+  font-size: 22px;
+  margin: 30px 0 10px;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+/* Стили для textarea */
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.input-above-text {
+  margin: 0;
+}
+
+.checkbox-patronymic {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.patronymic-check-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.custom-datepicker {
+  cursor: pointer;
+}
+
+.names-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.names-items {
+  display: flex;
+  gap: 5px;
+}
+
+.company-names-container {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.company-names-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exp-dates-contrainer {
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-buttons-container {
+  display: flex;
+}
+
+.salary-container {
+  display: flex;
+}
+
+.wishSalary-btn {
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: 2px solid #007bff;
+}
+
+.wishSalary-btn:hover {
+  background-color: #0056b3 !important;
+  color: #fff !important;
+  border-color: #0056b3 !important;
+}
+
+.wishSalary-input-disabled-true {
+  background-color: lightgray !important;
+  color: gray !important;
+}
+
+
+.rendered-btn {
+border-radius: 5px;
+cursor: pointer;
+margin: 5px;
+padding: 10px 20px;
+margin: 5px 0; 
+font-weight: bold;
+}
+
+.btn-group{
+  display: flex;
+  gap: 5px;
+  margin-left: 10px;
 }

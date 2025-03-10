@@ -1,0 +1,123 @@
+.container {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  /* Увеличены верхний и нижний отступы */
+  background-color: #fff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.avatar-pdf {
+  max-width: 140px;
+  /* ограничение по ширине */
+  max-height: 140px;
+  /* ограничение по высоте */
+  width: auto;
+  /* даём браузеру рассчитать ширину */
+  height: auto;
+  /* даём браузеру рассчитать высоту */
+  border-radius: 50%;
+  /* круг */
+  object-fit: cover;
+  /* обрезка, если пропорции не совпадают */
+  border: 4px solid #007bff;
+  /* margin-right: 20px; */
+}
+
+.nameContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 24px;
+  margin: 0;
+}
+
+.position {
+  font-size: 18px;
+  margin: 5px 0 0;
+}
+
+.section {
+  page-break-inside: avoid; /* для старых версий wkhtmltopdf */
+  break-inside: avoid; /* для современных браузеров */
+}
+
+.sectionTitle {
+  font-size: 20px;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.paragraph {
+  font-size: 16px;
+  margin: 5px 0;
+  white-space: "pre-wrap";
+}
+
+@page {
+  size: A4;
+  margin: 60px;
+}
+
+.experienceItem {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.experienceTitle {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.experienceCompany {
+  font-size: 16px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.experienceDates {
+  margin: 5px 0;
+  color: #555;
+  font-style: italic;
+}
+
+.experienceDescription {
+  margin: 5px 0;
+}
+
+.responsibilities-ul {
+  margin: 5px 0;
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.responsibilities-li {
+  margin-bottom: 4px;
+}
+
+.responsibilities-span {
+  margin-right: 8px;
+  color: #28a745;
+}
+
+.experiences-wrapper {
+  display: "flex";
+  justify-content: space-between;
+}
